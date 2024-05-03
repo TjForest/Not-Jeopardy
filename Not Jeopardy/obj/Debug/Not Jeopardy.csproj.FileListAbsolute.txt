@@ -22,3 +22,10 @@ C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\D
 C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.csproj.CoreCompileInputs.cache
 C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.exe
 C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.pdb
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\bin\Debug\Not Jeopardy.exe.config
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\bin\Debug\Not Jeopardy.exe
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\bin\Debug\Not Jeopardy.pdb
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.csproj.AssemblyReference.cache
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.csproj.CoreCompileInputs.cache
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.exe
+C:\Dev\_Repos\Not-Jeopardy\Not Jeopardy\obj\Debug\Not Jeopardy.pdb
