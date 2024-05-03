@@ -1,0 +1,8 @@
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\bin\Release\Not Jeopardy.exe.config
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\bin\Release\Not Jeopardy.exe
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\bin\Release\Not Jeopardy.pdb
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Release\Not Jeopardy.csproj.AssemblyReference.cache
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Release\Not Jeopardy.csproj.SuggestedBindingRedirects.cache
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Release\Not Jeopardy.csproj.CoreCompileInputs.cache
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Release\Not Jeopardy.exe
+C:\Users\shado\OneDrive\Stuff\Programmers Choice\Not Jeopardy\Not Jeopardy\obj\Release\Not Jeopardy.pdb
