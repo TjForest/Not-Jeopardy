@@ -24,17 +24,12 @@ namespace Not_Jeopardy {
 		/// <summary>
 		/// Builds a tile on the game board
 		/// </summary>
-		public static void BuildTile() {
+		public static void BuildTile(int x, int y) {
 			string num;
 			num = "    ";
-			int BX = 0;
-			int BY = 0;
 
-			BX = XSwitcher(BX);
-			BY = YSwitcher(BY);
-
-			if(Program.PlayBoard[BY, BX] == true) {
-				switch(Program.CoordY) {
+			if(Program.GetAnswered(YSwitcher(y), XSwitcher(x)) == true) {
+				switch(y) {
 					case 0:
 					num = "$100";
 					break;
@@ -52,15 +47,15 @@ namespace Not_Jeopardy {
 					break;
 				}
 			}
-			Console.SetCursorPosition(Program.CoordX, Program.CoordY);
+			Console.SetCursorPosition(x, y);
 			Console.Write("o--------o");
-			Console.SetCursorPosition(Program.CoordX, (Program.CoordY + 1));
+			Console.SetCursorPosition(x, ++y);
 			Console.Write("|        |");
-			Console.SetCursorPosition(Program.CoordX, (Program.CoordY + 2));
+			Console.SetCursorPosition(x, ++y);
 			Console.Write("|  " + num + "  |");
-			Console.SetCursorPosition(Program.CoordX, (Program.CoordY + 3));
+			Console.SetCursorPosition(x, ++y);
 			Console.Write("|        |");
-			Console.SetCursorPosition(Program.CoordX, (Program.CoordY + 4));
+			Console.SetCursorPosition(x, ++y);
 			Console.Write("o--------o");
 		}
 
@@ -69,50 +64,40 @@ namespace Not_Jeopardy {
 		/// </summary>
 		/// <param name="BY">Y cursor coordinates</param>
 		/// <returns>Y array coorinates</returns>
-		public static int YSwitcher(int BY) {
-			switch(Program.CoordY) {
+		public static int YSwitcher(int y) {
+			switch(y) {
 				case 0:
-				BY = 0;
-				break;
+				return 0;
 				case 5:
-				BY = 1;
-				break;
+				return 1;
 				case 10:
-				BY = 2;
-				break;
+				return 2;
 				case 15:
-				BY = 3;
-				break;
+				return 3;
 				case 20:
-				BY = 4;
-				break;
+				return 4;
 			}
-			return BY;
+			return 0;
 		}
 		/// <summary>
 		/// Changes Y cursor coordinates into array coordinates
 		/// </summary>
 		/// <param name="BY">Y cursor coordinates</param>
 		/// <returns>Y array coorinates</returns>
-		public static int XSwitcher(int BX) {
-			switch(Program.CoordX) {
+		public static int XSwitcher(int x) {
+			switch(x) {
 				case 0:
-				BX = 0;
-				break;
+				return 0;
 				case 10:
-				BX = 1;
-				break;
+				return 1;
 				case 20:
-				BX = 2;
-				break;
+				return 2;
 				case 30:
-				BX = 3;
-				break;
+				return 3;
 				case 40:
-				BX = 4;
-				break;
+				return 4;
 			}
-			return BX;
+			return 0;
 		}
 	}
 }

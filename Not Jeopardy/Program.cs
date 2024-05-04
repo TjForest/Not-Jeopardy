@@ -10,37 +10,37 @@ using System.Threading.Tasks;
 
 namespace Not_Jeopardy {
 	class Program {
-		#region Global Variables
+		#region Member Variables
 		/// <summary>
 		/// The play board is used to keep track of what questions have been answered<br></br>
 		/// <c>true</c> (1) if the question has not been answered<br></br>
 		/// <c>false</c> (0) if the question has been answered
 		/// </summary>
-		public static bool[,] PlayBoard = new bool[5, 5];
+		private static bool[,] PlayBoard = new bool[5, 5];
 		/// <summary>
 		/// The select array is used to select tiles on the board<br></br>
 		/// <c>true</c> (1) if the tile is selected<br></br>
 		/// <c>false</c> (0) if the tile is not selected
 		/// </summary>
-		public static bool[,] SelectBoard = new bool[5, 5];
+		private static bool[,] SelectBoard = new bool[5, 5];
 
 		/// <summary>
 		/// Stores the console cursor coordinate for the X axis
 		/// </summary>
-		public static int CoordX;
+		private static int CoordX;
 		/// <summary>
 		/// Stores the console cursor coordinate for the Y axis
 		/// </summary>
-		public static int CoordY;
+		private static int CoordY;
 
 		/// <summary>
 		/// Stores the current X coordinate of the selector
 		/// </summary>
-		public static int m_X = 0;
+		private static int m_X = 0;
 		/// <summary>
 		/// Stores the current Y coordinate of the selector
 		/// </summary>
-		public static int m_Y = 0;
+		private static int m_Y = 0;
 		#endregion
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Not_Jeopardy {
 					BuildBoard(); // refresh the board
 				} // the player selected a tile
 				Console.Clear(); // clear the console
-				Questions.QHandeler(); // ask the question
+				Questions.QHandeler(m_X, m_Y); // ask the question
 			} while(AGAIN(Playing())); // Check if the game is over and then if the player wants to play again
 		}
 
@@ -108,11 +108,11 @@ namespace Not_Jeopardy {
 					if(SelectBoard[i, j] == true) {
 						Board.BoardWhite();
 						CoordConvert(i, j);
-						Board.BuildTile();
+						Board.BuildTile(CoordX, CoordY);
 						Board.BoardBlack();
 					} else {
 						CoordConvert(i, j);
-						Board.BuildTile();
+						Board.BuildTile(CoordX, CoordY);
 					}
 				}
 			}
@@ -244,6 +244,15 @@ namespace Not_Jeopardy {
 				}
 			}
 			return true; // all questions have been answered, game is over
+		}
+		#endregion
+
+		#region Public Functions
+		public static bool GetAnswered(int x, int y) {
+			return PlayBoard[y, x];
+		}
+		public static void SetAnswered(int x, int y, bool setTo) {
+			PlayBoard[y, x] = setTo;
 		}
 		#endregion
 	}

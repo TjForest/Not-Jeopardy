@@ -14,13 +14,13 @@ namespace Not_Jeopardy {
 		/// <summary>
 		/// Handles the questions for the game
 		/// </summary>
-		public static void QHandeler() {
-			Program.PlayBoard[Program.m_Y, Program.m_X] = false; // sets the selected tile to (answered)
+		public static void QHandeler(int x, int y) {
+			Program.SetAnswered(y, x, false); // sets the selected tile to (answered)
 
 			// switch on the Y coordinate then switch on the X coordinate to choose the specific question
-			switch(Program.m_Y) {
+			switch(y) {
 				case 0:
-				switch(Program.m_X) { 
+				switch(x) { 
 					case 0:
 					Q00();
 					break;
@@ -39,7 +39,7 @@ namespace Not_Jeopardy {
 				}
 				break;
 				case 1:
-				switch(Program.m_X) {
+				switch(x) {
 					case 0:
 					Q10();
 					break;
@@ -58,7 +58,7 @@ namespace Not_Jeopardy {
 				}
 				break;
 				case 2:
-				switch(Program.m_X) {
+				switch(x) {
 					case 0:
 					Q20();
 					break;
@@ -77,7 +77,7 @@ namespace Not_Jeopardy {
 				}
 				break;
 				case 3:
-				switch(Program.m_X) {
+				switch(x) {
 					case 0:
 					Q30();
 					break;
@@ -96,7 +96,7 @@ namespace Not_Jeopardy {
 				}
 				break;
 				case 4:
-				switch(Program.m_X) {
+				switch(x) {
 					case 0:
 					Q40();
 					break;
@@ -118,28 +118,33 @@ namespace Not_Jeopardy {
 			Console.Clear();
 		}
 
+		/// <summary>
+		/// Allows the player to select an answer from a list
+		/// </summary>
+		/// <param name="Answers">Each string is an answer choice for the player</param>
+		/// <returns>An int based on the answer choice selected</returns>
 		private static int Qselect(string[] Answers) {
 			int sel = 1;
 			string seled = " > ";
 			string unseled = "   ";
 
 			while(true) {
+				// build list
 				Console.SetCursorPosition(0, 3);
 				for (int i = 0; i < Answers.Length; i++) {
-					if (sel == i + 1) {
-						Console.Write(seled + Answers[i]);
-					} else {
-						Console.Write(unseled + Answers[i]);
+					if (sel == i + 1) { // if the answer is highlighted
+						Console.WriteLine(seled + Answers[i]);
+					} else { // if the answer is not highlighted
+						Console.WriteLine(unseled + Answers[i]);
 					}
-					Console.WriteLine();
 				}
 
+				// user input
 				ConsoleKey ui = Console.ReadKey(true).Key;
-
 				if((ui == ConsoleKey.UpArrow || ui == ConsoleKey.W) && sel != 1) {
 					sel--;
 				}
-				if((ui == ConsoleKey.DownArrow || ui == ConsoleKey.S) && sel != Answers.Length + 1) {
+				if((ui == ConsoleKey.DownArrow || ui == ConsoleKey.S) && sel != Answers.Length) {
 					sel++;
 				}
 				if(ui == ConsoleKey.Enter || ui == ConsoleKey.Spacebar) {
